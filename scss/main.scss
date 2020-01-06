@@ -1,3 +1,5 @@
+@import 'config';
+
 //Reset CSS
 * {
     box-sizing: border-box;
@@ -5,3 +7,9 @@
     padding: 0;
 }
 
+.pomodoro-container {
+    position: relative;
+    background: $primary-colour;
+    height: 100vh;
+    width: 100vw;
+}

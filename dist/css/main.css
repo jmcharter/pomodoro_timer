@@ -2,3 +2,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
+
+.pomodoro-container {
+  position: relative;
+  background: #e02200;
+  height: 100vh;
+  width: 100vw; }
