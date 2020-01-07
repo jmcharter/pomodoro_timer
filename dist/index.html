@@ -13,15 +13,23 @@
     <div class="pomodoro-clock">
         <div class="pomodoro-clock-face">25:00</div>
         <div class="pomodoro-actions">
-            <button class="btn action-start">Start</button>
-            <button class="btn action-pause">Pause</button>
-            <button class="btn action-stop">Stop / Reset</button>
+            <div class="action-btns">
+                <button class="btn action-start">Start</button>
+                <button class="btn action-pause">Pause</button>
+                <button class="btn action-stop">Stop / Reset</button>
+            </div>
         </div>
-        <div class="left-controls">
+        <div class="controls left-controls">
             <h3>Adjust Work Timer</h3>
-            <span id="worktime">25 Minutes</span>
             <button class="btn action-workTimerPlus">+</button>
+            <span id="worktime">25 Minutes</span>
             <button class="btn action-workTimerMinus">-</button>
+        </div>
+        <div class="controls right-controls">
+            <h3>Adjust Break Timer</h3>
+            <button class="btn action-breakTimerPlus">+</button>
+            <span id="breaktime">5 Minutes</span>
+            <button class="btn action-breakTimerMinus">-</button>
         </div>
     </div>
 </div>

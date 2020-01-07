@@ -32,8 +32,26 @@ body {
 
 .pomodoro-actions {
   display: flex;
+  align-items: center;
   justify-content: center;
   grid-area: buttons; }
 
+.left-controls, .right-controls {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center; }
+
+.left-controls {
+  grid-area: lcontrols; }
+
+.right-controls {
+  grid-area: rcontrols; }
+
 .btn {
-  height: 20px; }
+  height: 30px;
+  cursor: pointer; }
+
+.controls .btn {
+  font-size: 1.25rem;
+  width: 80px; }
