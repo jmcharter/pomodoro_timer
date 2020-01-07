@@ -3,8 +3,37 @@
   margin: 0;
   padding: 0; }
 
+body {
+  background: #333;
+  color: white; }
+
 .pomodoro-container {
   position: relative;
+  margin: auto auto;
   background: #e02200;
-  height: 100vh;
-  width: 100vw; }
+  height: 50vh;
+  width: 50vw; }
+
+.pomodoro-clock {
+  height: 100%;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: "clockface clockface clockface" "lcontrols buttons rcontrols" "lcontrols buttons rcontrols";
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr); }
+
+.pomodoro-clock-face {
+  display: flex;
+  grid-area: clockface;
+  color: #eeffee;
+  font-size: 3rem;
+  justify-content: center;
+  align-items: center; }
+
+.pomodoro-actions {
+  display: flex;
+  justify-content: center;
+  grid-area: buttons; }
+
+.btn {
+  height: 20px; }
