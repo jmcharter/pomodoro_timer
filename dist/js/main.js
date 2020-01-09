@@ -25,7 +25,7 @@ task.addEventListener('keypress', (e) => {
 task.addEventListener("input", () => {
     editIcon.style.opacity = "0"
     editIcon.style.transform = "translateX(0.5rem)"
-    task.style.transform = "translateX(0.5rem)"
+    task.style.transform = "translateX(1rem)"
 })
 
 //Add alarm audio
