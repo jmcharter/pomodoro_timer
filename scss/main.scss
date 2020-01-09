@@ -8,20 +8,51 @@
 }
 
 body {
-    background: $primary-colour;
     color: white;
+}
+
+main {
+    background: $primary-colour;
+    height: 100vh;
 }
 
 h1 {
     text-align: center;
 }
 
+
+
 .pomodoro-container {
+    padding-top: 5rem;
     position: relative;
     margin: auto auto;
-    background: $secondary-colour;
-    height: 50vh;
+    min-height: 50vh;
     width: 50vw;
+}
+
+.tomato {
+    // padding-top: 2rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: tomato;
+
+    h1, svg {
+        position: absolute;
+        
+    }
+
+    h1 {
+        z-index: 1;
+        font-size: 3rem;
+    }
+
+    svg {
+        width: 200px;
+        height: 200px;
+        transform: translateY(-1rem);
+    }
 }
 
 .pomodoro-clock {
@@ -29,12 +60,36 @@ h1 {
     display: grid;
     grid-gap: 30px;
     grid-template-areas: 
-        "clockface clockface clockface"
-        "lcontrols buttons rcontrols"
+        "tomato tomato tomato"
+        "task task task"
+        "lcontrols clockface rcontrols"
         "lcontrols buttons rcontrols";
-        grid-template-rows: repeat(3, 1fr);
+        grid-template-rows: 2fr repeat(4, 1fr);
         grid-template-columns: repeat(3, 1fr);
         
+}
+
+.pomodoro-task {
+    grid-area: task;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba($clock-font-colour,0.8);
+    transition: all 1s ease;
+
+    h2{
+        &:focus {
+            outline: 0px solid;
+        }
+    }
+
+    .fa-edit {
+        opacity: 1;
+        transform: translateX(0);
+        font-size: 0.75rem;
+        padding: 1rem;
+        transition: all 1s ease;
+    }
 }
 
 .pomodoro-clock-face {

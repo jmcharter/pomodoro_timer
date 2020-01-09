@@ -4,26 +4,61 @@
   padding: 0; }
 
 body {
-  background: #333;
   color: white; }
+
+main {
+  background: #ff5555;
+  height: 100vh; }
 
 h1 {
   text-align: center; }
 
 .pomodoro-container {
+  padding-top: 5rem;
   position: relative;
   margin: auto auto;
-  background: #e02200;
-  height: 50vh;
+  min-height: 50vh;
   width: 50vw; }
+
+.tomato {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: tomato; }
+  .tomato h1, .tomato svg {
+    position: absolute; }
+  .tomato h1 {
+    z-index: 1;
+    font-size: 3rem; }
+  .tomato svg {
+    width: 200px;
+    height: 200px;
+    transform: translateY(-1rem); }
 
 .pomodoro-clock {
   height: 100%;
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: "clockface clockface clockface" "lcontrols buttons rcontrols" "lcontrols buttons rcontrols";
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas: "tomato tomato tomato" "task task task" "lcontrols clockface rcontrols" "lcontrols buttons rcontrols";
+  grid-template-rows: 2fr repeat(4, 1fr);
   grid-template-columns: repeat(3, 1fr); }
+
+.pomodoro-task {
+  grid-area: task;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(238, 255, 238, 0.8);
+  transition: all 1s ease; }
+  .pomodoro-task h2:focus {
+    outline: 0px solid; }
+  .pomodoro-task .fa-edit {
+    opacity: 1;
+    transform: translateX(0);
+    font-size: 0.75rem;
+    padding: 1rem;
+    transition: all 1s ease; }
 
 .pomodoro-clock-face {
   display: flex;
