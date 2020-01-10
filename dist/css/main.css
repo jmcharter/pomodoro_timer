@@ -4,7 +4,21 @@
   padding: 0; }
 
 body {
-  color: white; }
+  color: white;
+  position: relative; }
+
+.source {
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 1.5rem; }
+  .source a {
+    font-variant: small-caps;
+    color: #fff;
+    text-decoration: none; }
+    .source a:hover {
+      color: lightgreen; }
 
 main {
   background: #ff5555;
@@ -39,7 +53,7 @@ h1 {
 .pomodoro-clock {
   height: 100%;
   display: grid;
-  grid-gap: 30px;
+  gap: 30px;
   grid-template-areas: "tomato tomato tomato" "task task task" "lcontrols clockface rcontrols" "lcontrols buttons rcontrols";
   grid-template-rows: 2fr repeat(4, 1fr);
   grid-template-columns: repeat(3, 1fr); }
@@ -93,3 +107,53 @@ h1 {
 .controls .btn {
   font-size: 1.25rem;
   width: 80px; }
+
+.pomodoro-method {
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  z-index: 1;
+  top: 10vh; }
+  .pomodoro-method .modal {
+    background: blanchedalmond;
+    color: #ff5555;
+    z-index: 3; }
+    .pomodoro-method .modal h3 {
+      padding: 1rem; }
+    .pomodoro-method .modal ul, .pomodoro-method .modal cite {
+      padding: 1rem 2rem; }
+  .pomodoro-method .backdrop {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.75);
+    height: 100vh;
+    width: 100vw;
+    z-index: -1; }
+  .pomodoro-method cite {
+    display: block;
+    padding-top: 1rem;
+    font-weight: lighter;
+    font-style: italic; }
+    .pomodoro-method cite a {
+      text-decoration: none;
+      color: #ff8888; }
+      .pomodoro-method cite a:hover {
+        color: lightgreen; }
+
+#modal-toggle {
+  cursor: pointer;
+  text-align: center; }
+
+.show {
+  visibility: visible; }
+
+@media screen and (max-width: 500px) {
+  .pomodoro-clock {
+    grid-template-areas: "tomato tomato" "task task" "clockface clockface" "lcontrols rcontrols" "buttons button";
+    grid-template-rows: 1.5fr 0.5fr repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0; } }
