@@ -4,7 +4,10 @@ const btnPause = document.querySelector('.action-pause');
 const btnStop = document.querySelector('.action-stop');
 const clockFace = document.querySelector('.pomodoro-clock-face');
 const task = document.querySelector('.pomodoro-task h2');
-const editIcon = document.querySelector('.pomodoro-task .fa-edit')
+const editIcon = document.querySelector('.pomodoro-task .fa-edit');
+const infoModal = document.querySelector(".pomodoro-method");
+const modalToggle = document.querySelector('#modal-toggle');
+const modalBackdrop = document.querySelector('.backdrop');
 
 
 //Init
@@ -27,6 +30,16 @@ task.addEventListener("input", () => {
     editIcon.style.transform = "translateX(0.5rem)"
     task.style.transform = "translateX(1rem)"
 })
+
+modalToggle.addEventListener('click', () => {
+    infoModal.classList.add("show");
+})
+
+modalBackdrop.addEventListener("click", (e) => {
+    if (e.target != infoModal) {
+        infoModal.classList.remove("show");
+    }
+});
 
 //Add alarm audio
 const alarm = document.createElement('audio');
