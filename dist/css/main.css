@@ -156,4 +156,6 @@ h1 {
     grid-template-areas: "tomato tomato" "task task" "clockface clockface" "lcontrols rcontrols" "buttons button";
     grid-template-rows: 1.5fr 0.5fr repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
-    gap: 0; } }
+    gap: 0; }
+  .right-controls {
+    padding-left: 1rem; } }
