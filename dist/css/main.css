@@ -21,7 +21,7 @@ body {
       color: lightgreen; }
 
 main {
-  background: #ff5555;
+  background: #f95428;
   height: 100vh; }
 
 h1 {
@@ -93,6 +93,8 @@ h1 {
   flex-flow: column;
   align-items: center;
   justify-content: center; }
+  .left-controls h3, .right-controls h3 {
+    padding-bottom: 2vh; }
 
 .left-controls {
   grid-area: lcontrols; }
@@ -106,7 +108,14 @@ h1 {
 
 .controls .btn {
   font-size: 1.25rem;
-  width: 80px; }
+  width: 80px;
+  background: linear-gradient(180deg, #f95428 25%, #cf3006 100%);
+  border: none;
+  color: lightgreen;
+  font-weight: bold; }
+
+#worktime, #breaktime {
+  padding: 1vh; }
 
 .pomodoro-method {
   visibility: hidden;
@@ -116,7 +125,7 @@ h1 {
   top: 10vh; }
   .pomodoro-method .modal {
     background: blanchedalmond;
-    color: #ff5555;
+    color: #f95428;
     z-index: 3; }
     .pomodoro-method .modal h3 {
       padding: 1rem; }
@@ -140,7 +149,7 @@ h1 {
     font-style: italic; }
     .pomodoro-method cite a {
       text-decoration: none;
-      color: #ff8888; }
+      color: #fa7b5a; }
       .pomodoro-method cite a:hover {
         color: lightgreen; }
 
