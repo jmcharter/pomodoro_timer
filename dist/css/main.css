@@ -208,4 +208,5 @@ h1 {
     padding-right: 2rem; }
   .source {
     top: 0;
-    right: 0; } }
+    right: 0;
+    z-index: 2; } }
