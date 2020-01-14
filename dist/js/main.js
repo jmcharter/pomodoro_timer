@@ -1,6 +1,5 @@
 //Get DOM Elements
 const btnStart = document.querySelector('.action-start');
-const btnPause = document.querySelector('.action-pause');
 const btnStop = document.querySelector('.action-stop');
 const clockFace = document.querySelector('.pomodoro-clock-face');
 const task = document.querySelector('.pomodoro-task h2');
@@ -66,9 +65,8 @@ applyBtnLogic(".action-breakTimerPlus", ".action-breakTimerMinus", "#breaktime",
 
 btnStart.addEventListener('click', (event) => {
     toggleTimer();
-});
-btnPause.addEventListener('click', (event) => {
-    toggleTimer();
+    if (btnStart.innerHTML == "Start") { btnStart.innerHTML = "Pause" }
+    else { btnStart.innerHTML = "Start" }
 });
 btnStop.addEventListener('click', (event) => {
     toggleTimer(true);
