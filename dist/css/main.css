@@ -5,7 +5,8 @@
 
 body {
   color: white;
-  position: relative; }
+  position: relative;
+  background: #ad1a00; }
 
 .source {
   padding: 1rem;
@@ -21,8 +22,8 @@ body {
       color: lightgreen; }
 
 main {
-  background: #f95428;
-  height: 100vh; }
+  height: 100vh;
+  position: relative; }
 
 h1 {
   text-align: center; }
@@ -103,30 +104,33 @@ h1 {
   grid-area: rcontrols; }
 
 .btn {
-  height: 30px;
-  cursor: pointer; }
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  background: linear-gradient(180deg, #bc1d00 20%, rgba(148, 22, 0, 0.8) 100%);
+  border: 1px solid #bc1d00;
+  color: chartreuse;
+  font-weight: bold; }
 
 .controls .btn {
-  font-size: 1.25rem;
-  width: 80px;
-  background: linear-gradient(180deg, #f95428 25%, #cf3006 100%);
-  border: none;
-  color: lightgreen;
-  font-weight: bold; }
+  font-size: 1.25rem; }
 
 #worktime, #breaktime {
   padding: 1vh; }
 
 .pomodoro-method {
   visibility: hidden;
+  opacity: 0;
   transition: all 0.3s ease-in-out;
   position: absolute;
   z-index: 1;
   top: 10vh; }
   .pomodoro-method .modal {
+    transform: scale(0.9);
     background: blanchedalmond;
-    color: #f95428;
-    z-index: 3; }
+    color: #ad1a00;
+    z-index: 3;
+    transition: all 0.1s ease-in; }
     .pomodoro-method .modal h3 {
       padding: 1rem; }
     .pomodoro-method .modal ul, .pomodoro-method .modal cite {
@@ -149,22 +153,45 @@ h1 {
     font-style: italic; }
     .pomodoro-method cite a {
       text-decoration: none;
-      color: #fa7b5a; }
+      color: #e02200; }
       .pomodoro-method cite a:hover {
-        color: lightgreen; }
+        color: green; }
 
 #modal-toggle {
   cursor: pointer;
   text-align: center; }
 
 .show {
-  visibility: visible; }
+  visibility: visible;
+  opacity: 1; }
+  .show > .modal {
+    transform: scale(1); }
+
+.tomato-back {
+  fill: #ad1a00;
+  stroke-opacity: 0.2; }
+
+.tomato-front {
+  fill: #bc1d00; }
 
 @media screen and (max-width: 500px) {
+  main {
+    height: 100%;
+    width: 100%; }
+  .pomodoro-container {
+    padding-top: 3vh;
+    width: 100%; }
   .pomodoro-clock {
-    grid-template-areas: "tomato tomato" "task task" "clockface clockface" "lcontrols rcontrols" "buttons button";
+    height: 90vh;
+    grid-template-areas: "tomato tomato" "task task" "clockface clockface" "lcontrols rcontrols" "buttons buttons";
     grid-template-rows: 1.5fr 0.5fr repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0; }
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    justify-content: space-between; }
   .right-controls {
-    padding-left: 1rem; } }
+    padding-left: 2rem; }
+  .left-controls {
+    padding-right: 2rem; }
+  .source {
+    top: 0;
+    right: 0; } }
