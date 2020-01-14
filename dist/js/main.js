@@ -70,6 +70,8 @@ btnStart.addEventListener('click', (event) => {
 });
 btnStop.addEventListener('click', (event) => {
     toggleTimer(true);
+    if (btnStart.innerHTML == "Start") { btnStart.innerHTML = "Pause" }
+    else { btnStart.innerHTML = "Start" }
 });
 
 
