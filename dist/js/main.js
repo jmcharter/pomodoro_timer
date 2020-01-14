@@ -18,22 +18,26 @@ let onBreak = false;
 let breakCount = 0;
 let timer = 0; //variable for setInterval
 
+//Stop enter from creating a newline when editing the task element.
 task.addEventListener('keypress', (e) => {
     if (e.which === 13) {
         e.preventDefault();
     }
 });
 
+//Remove the edit icon once something has been typed.
 task.addEventListener("input", () => {
     editIcon.style.opacity = "0"
     editIcon.style.transform = "translateX(0.5rem)"
     task.style.transform = "translateX(1rem)"
 })
 
+//Add or remove .show class to Modal on click.
 modalToggle.addEventListener('click', () => {
     infoModal.classList.add("show");
 })
 
+//This make clicking anywhere outside the modal close it.
 modalBackdrop.addEventListener("click", (e) => {
     if (e.target != infoModal) {
         infoModal.classList.remove("show");
