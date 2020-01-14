@@ -109,7 +109,7 @@ h1 {
   height: 50px;
   background: linear-gradient(180deg, #bc1d00 20%, rgba(148, 22, 0, 0.8) 100%);
   border: 1px solid #bc1d00;
-  color: chartreuse;
+  color: #9AD14B;
   font-weight: bold; }
 
 .controls .btn {
@@ -155,7 +155,7 @@ h1 {
       text-decoration: none;
       color: #e02200; }
       .pomodoro-method cite a:hover {
-        color: green; }
+        color: #9AD14B; }
 
 #modal-toggle {
   cursor: pointer;
@@ -174,20 +174,34 @@ h1 {
 .tomato-front {
   fill: #bc1d00; }
 
+.tomato-green {
+  fill: #90BC42; }
+
+.tomato-green-highlight {
+  fill: #9AD14B; }
+
 @media screen and (max-width: 500px) {
   main {
     height: 100%;
     width: 100%; }
   .pomodoro-container {
-    padding-top: 3vh;
+    padding-top: 4vh;
     width: 100%; }
   .pomodoro-clock {
+    padding: 1rem;
     height: 90vh;
     grid-template-areas: "tomato tomato" "task task" "clockface clockface" "lcontrols rcontrols" "buttons buttons";
     grid-template-rows: 1.5fr 0.5fr repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-    justify-content: space-between; }
+    gap: 0; }
+  .pomodoro-actions .btn {
+    width: 150px;
+    height: 70px;
+    font-size: 1.25rem; }
+  .controls {
+    text-align: center; }
+    .controls span {
+      font-size: 1.5rem; }
   .right-controls {
     padding-left: 2rem; }
   .left-controls {

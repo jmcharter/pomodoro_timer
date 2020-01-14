@@ -156,7 +156,7 @@ h1 {
     darken(rgba($primary-colour, $alpha: 0.8),5) 100%
     );
     border: 1px solid $tomato-highlight;
-    color: chartreuse;
+    color: $tomato-green-highlight;
     font-weight: bold;
     
 }
@@ -218,7 +218,7 @@ h1 {
             color: lighten($primary-colour, $amount: 10);
 
             &:hover {
-                color: green;
+                color: $tomato-green-highlight;
             }
         }
     }
@@ -246,6 +246,14 @@ h1 {
 
 .tomato-front {
     fill: $tomato-highlight;
+}
+
+.tomato-green {
+    fill: $tomato-green;
+}
+
+.tomato-green-highlight {
+    fill: $tomato-green-highlight;
 }
 
 @import 'mobile';

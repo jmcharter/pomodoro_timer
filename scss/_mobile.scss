@@ -6,11 +6,12 @@
     }
 
     .pomodoro-container {
-        padding-top: 3vh;
+        padding-top: 4vh;
         width: 100%;
     }
 
     .pomodoro-clock {
+        padding: 1rem;
         height: 90vh;
         grid-template-areas: 
             "tomato tomato"
@@ -21,7 +22,20 @@
             grid-template-rows: 1.5fr 0.5fr repeat(3,1fr);
             grid-template-columns: repeat(2, 1fr);
             gap: 0;
-            justify-content: space-between;
+    }
+
+    .pomodoro-actions .btn {
+        width: 150px;
+        height: 70px;
+        font-size: 1.25rem;
+    }
+
+    .controls {
+        text-align: center;
+        
+        span{
+            font-size: 1.5rem;
+        }
     }
 
     .right-controls {
