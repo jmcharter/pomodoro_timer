@@ -1,17 +1,40 @@
 @media screen and (max-width:500px){
+
+    main {
+        height: 100%;
+        width: 100%;
+    }
+
+    .pomodoro-container {
+        padding-top: 3vh;
+        width: 100%;
+    }
+
     .pomodoro-clock {
+        height: 90vh;
         grid-template-areas: 
             "tomato tomato"
             "task task"
             "clockface clockface"
             "lcontrols rcontrols"
-            "buttons button";
+            "buttons buttons";
             grid-template-rows: 1.5fr 0.5fr repeat(3,1fr);
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 0;
+            justify-content: space-between;
     }
 
     .right-controls {
-        padding-left: 1rem;
+        padding-left: 2rem;
     }
+
+    .left-controls {
+        padding-right: 2rem;
+    }
+
+    .source {
+        top: 0;
+        right: 0;
+    }
+
 }
