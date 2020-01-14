@@ -10,6 +10,7 @@
 body {
     color: white;
     position: relative;
+    background: $primary-colour;
 }
 
 .source {
@@ -31,8 +32,8 @@ body {
 }
 
 main {
-    background: $primary-colour;
     height: 100vh;
+    position: relative;
 }
 
 h1 {
@@ -50,7 +51,6 @@ h1 {
 }
 
 .tomato {
-    // padding-top: 2rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -147,21 +147,22 @@ h1 {
 }
 
 .btn {
-    height: 30px;
+
     cursor: pointer;
+    width: 100px;
+    height: 50px;
+    background: linear-gradient(180deg,
+    rgba($tomato-highlight, $alpha: 1) 20%,
+    darken(rgba($primary-colour, $alpha: 0.8),5) 100%
+    );
+    border: 1px solid $tomato-highlight;
+    color: chartreuse;
+    font-weight: bold;
     
 }
 
 .controls .btn {
     font-size: 1.25rem;
-    width: 80px;
-    background: linear-gradient(180deg,
-        rgba($primary-colour, $alpha: 1.0) 25%,
-        darken(rgba($primary-colour, $alpha: 1.0),15) 100%
-        );
-    border: none;
-    color: lightgreen;
-    font-weight: bold;
 }
 
 #worktime, #breaktime {
@@ -170,15 +171,18 @@ h1 {
 
 .pomodoro-method {
     visibility: hidden;
+    opacity: 0;
     transition: all 0.3s ease-in-out;
     position: absolute;
     z-index: 1;
     top: 10vh;
     
     .modal {
+        transform: scale(0.9);
         background: blanchedalmond;
         color: $primary-colour;
         z-index: 3;
+        transition: all 0.1s ease-in;
 
         h3 {
             padding: 1rem;
@@ -214,7 +218,7 @@ h1 {
             color: lighten($primary-colour, $amount: 10);
 
             &:hover {
-                color: lightgreen;
+                color: green;
             }
         }
     }
@@ -227,6 +231,21 @@ h1 {
 
 .show {
     visibility: visible;
+    opacity: 1;
+
+    &>.modal{
+        transform: scale(1);
+    }
+}
+
+.tomato-back {
+    fill: $primary-colour;
+    // stroke: black;
+    stroke-opacity: 0.2;
+}
+
+.tomato-front {
+    fill: $tomato-highlight;
 }
 
 @import 'mobile';
