@@ -145,7 +145,7 @@ function updateDisplay() {
     let secs = secondsRemaining % 60;
 
     //conditional adds leading zero when seconds are a single digit.
-    clockFace.textContent = mins + ":" + (secs > 10 ? secs : '0' + secs);
+    clockFace.textContent = mins + ":" + (secs > 9 ? secs : '0' + secs);
 }
 
 window.setInterval(updateDisplay, 100);
