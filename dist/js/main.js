@@ -37,7 +37,7 @@ modalToggle.addEventListener('click', () => {
     infoModal.classList.add("show");
 })
 
-//This make clicking anywhere outside the modal close it.
+//This makes clicking anywhere outside the modal close it.
 modalBackdrop.addEventListener("click", (e) => {
     if (e.target != infoModal) {
         infoModal.classList.remove("show");
@@ -74,8 +74,7 @@ btnStart.addEventListener('click', (event) => {
 });
 btnStop.addEventListener('click', (event) => {
     toggleTimer(true);
-    if (btnStart.innerHTML == "Start") { btnStart.innerHTML = "Pause" }
-    else { btnStart.innerHTML = "Start" }
+    btnStart.innerHTML = "Start";
 });
 
 
@@ -127,6 +126,8 @@ function clockCountdown() {
         clearInterval(timer)
         alarm.currentTime = 0; //Start audio file from beginnning.
         alarm.play();
+        btnStart.innerHTML = "Start";
+        paused = true;
 
         if (!onBreak) {
             breakCount++
