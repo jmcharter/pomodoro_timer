@@ -6,7 +6,7 @@
 body {
   color: white;
   position: relative;
-  background: #ad1a00; }
+  background: #2e3440; }
 
 .source {
   padding: 1rem;
@@ -107,8 +107,8 @@ h1 {
   cursor: pointer;
   width: 100px;
   height: 50px;
-  background: linear-gradient(180deg, #bc1d00 20%, rgba(148, 22, 0, 0.8) 100%);
-  border: 1px solid #bc1d00;
+  background: linear-gradient(180deg, #343b49 20%, rgba(35, 40, 49, 0.8) 100%);
+  border: 1px solid #343b49;
   color: #9AD14B;
   font-weight: bold; }
 
@@ -128,7 +128,7 @@ h1 {
   .pomodoro-method .modal {
     transform: scale(0.9);
     background: blanchedalmond;
-    color: #ad1a00;
+    color: #2e3440;
     z-index: 3;
     transition: all 0.1s ease-in; }
     .pomodoro-method .modal h3 {
@@ -153,7 +153,7 @@ h1 {
     font-style: italic; }
     .pomodoro-method cite a {
       text-decoration: none;
-      color: #e02200; }
+      color: #434c5e; }
       .pomodoro-method cite a:hover {
         color: #9AD14B; }
 
@@ -168,11 +168,11 @@ h1 {
     transform: scale(1); }
 
 .tomato-back {
-  fill: #ad1a00;
+  fill: #2e3440;
   stroke-opacity: 0.2; }
 
 .tomato-front {
-  fill: #bc1d00; }
+  fill: #343b49; }
 
 .tomato-green {
   fill: #90BC42; }
@@ -184,9 +184,11 @@ h1 {
   main {
     height: 100%;
     width: 100%; }
+
   .pomodoro-container {
     padding-top: 4vh;
     width: 100%; }
+
   .pomodoro-clock {
     padding: 1rem;
     height: 90vh;
@@ -194,19 +196,26 @@ h1 {
     grid-template-rows: 1.5fr 0.5fr repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 0; }
+
   .pomodoro-actions .btn {
     width: 150px;
     height: 70px;
     font-size: 1.25rem; }
+
   .controls {
     text-align: center; }
     .controls span {
       font-size: 1.5rem; }
+
   .right-controls {
     padding-left: 2rem; }
+
   .left-controls {
     padding-right: 2rem; }
+
   .source {
     top: 0;
     right: 0;
     z-index: 2; } }
+
+/*# sourceMappingURL=main.css.map */

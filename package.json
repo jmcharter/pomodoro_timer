@@ -4,7 +4,8 @@
   "description": "JS based Pomodoro Timer",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass -w scss/ -o dist/css/ --recursive"
+    "sass": "sass scss/:dist/css/",
+    "sass-watch": "sass scss/:dist/css/ --watch"
   },
   "author": "Jonathan Charter",
   "license": "ISC",
