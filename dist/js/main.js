@@ -45,8 +45,9 @@ modalBackdrop.addEventListener("click", (e) => {
 });
 
 //Add alarm audio
-const alarm = document.createElement('audio');
-alarm.setAttribute("src", "http://bbcsfx.acropolis.org.uk/assets/07070161.wav");
+// const alarm = document.createElement('audio');
+// alarm.setAttribute("src", "http://bbcsfx.acropolis.org.uk/assets/07070161.wav");
+const alarm = new Audio('/dist/audio/analog-watch-alarm_daniel-simion.mp3')
 
 
 // Add logic to plus and minus buttons for both work and break timers
