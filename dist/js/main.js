@@ -7,6 +7,7 @@ const editIcon = document.querySelector('.pomodoro-task .fa-edit');
 const infoModal = document.querySelector(".pomodoro-method");
 const modalToggle = document.querySelector('#modal-toggle');
 const modalBackdrop = document.querySelector('.backdrop');
+const break_counters = document.querySelectorAll('.circle');
 
 
 //Init
@@ -45,8 +46,6 @@ modalBackdrop.addEventListener("click", (e) => {
 });
 
 //Add alarm audio
-// const alarm = document.createElement('audio');
-// alarm.setAttribute("src", "http://bbcsfx.acropolis.org.uk/assets/07070161.wav");
 const alarm = new Audio('/audio/analog-watch-alarm_daniel-simion.mp3')
 
 
@@ -97,6 +96,18 @@ function adjustTimer(isPlus, timeSelect, timeDisplaySelect) {
     document.querySelector(timeSelect).textContent = timerSetting + " Minutes";
 }
 
+function updateBreakCounter(){
+    if (breakCount <= 4){
+        for(let i=0; i<breakCount; i++){
+            break_counters[i].classList.add('circle-active');
+        }
+    } else {
+        breakCount = 0;
+        for(let i=0; i<break_counters.length; i++){
+            break_counters[i].classList.remove('circle-active');
+        }
+    }
+}
 
 function toggleTimer(checkStop) {
     //When true is passed into the function, run the following. Otherwise, toggle the timer.
@@ -138,6 +149,7 @@ function clockCountdown() {
         }
         onBreak = !onBreak; //Toggle onBreak status.
         paused = true;
+        updateBreakCounter();
 
     }
 }

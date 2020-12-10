@@ -13,7 +13,8 @@ body {
   position: absolute;
   right: 0;
   bottom: 0;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  z-index: 3; }
   .source a {
     font-variant: small-caps;
     color: #fff;
@@ -55,8 +56,8 @@ h1 {
   height: 100%;
   display: grid;
   gap: 30px;
-  grid-template-areas: "tomato tomato tomato" "task task task" "lcontrols clockface rcontrols" "lcontrols buttons rcontrols";
-  grid-template-rows: 2fr repeat(4, 1fr);
+  grid-template-areas: "tomato tomato tomato" "task task task" "lcontrols clockface rcontrols" "lcontrols buttons rcontrols" "break_counter break_counter break_counter";
+  grid-template-rows: 2fr repeat(5, 1fr);
   grid-template-columns: repeat(3, 1fr); }
 
 .pomodoro-task {
@@ -109,7 +110,7 @@ h1 {
   height: 50px;
   background: linear-gradient(180deg, #343b49 20%, rgba(35, 40, 49, 0.8) 100%);
   border: 1px solid #343b49;
-  color: #9AD14B;
+  color: #88c0d0;
   font-weight: bold; }
 
 .controls .btn {
@@ -117,6 +118,23 @@ h1 {
 
 #worktime, #breaktime {
   padding: 1vh; }
+
+.break_counter {
+  grid-area: break_counter;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.circle {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  margin: 0.5rem 0.2rem;
+  float: left;
+  border: 1px solid #88c0d0; }
+
+.circle-active {
+  background-color: #bf616a; }
 
 .pomodoro-method {
   visibility: hidden;
@@ -155,7 +173,7 @@ h1 {
       text-decoration: none;
       color: #434c5e; }
       .pomodoro-method cite a:hover {
-        color: #9AD14B; }
+        color: #88c0d0; }
 
 #modal-toggle {
   cursor: pointer;
@@ -175,10 +193,10 @@ h1 {
   fill: #343b49; }
 
 .tomato-green {
-  fill: #90BC42; }
+  fill: #8fbcbb; }
 
 .tomato-green-highlight {
-  fill: #9AD14B; }
+  fill: #88c0d0; }
 
 @media screen and (max-width: 500px) {
   main {
@@ -192,7 +210,7 @@ h1 {
   .pomodoro-clock {
     padding: 1rem;
     height: 90vh;
-    grid-template-areas: "tomato tomato" "task task" "clockface clockface" "lcontrols rcontrols" "buttons buttons";
+    grid-template-areas: "tomato tomato" "task task" "clockface clockface" "lcontrols rcontrols" "buttons buttons" "break_counter break_counter";
     grid-template-rows: 1.5fr 0.5fr repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 0; }
